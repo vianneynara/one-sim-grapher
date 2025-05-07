@@ -8,8 +8,8 @@ from pathlib import Path
 
 # Base directories
 BASE_DIR = Path(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-INPUT_DIR = BASE_DIR / "input"
-OUTPUT_DIR = BASE_DIR / "output"
+INPUT_DIR = BASE_DIR / "../input"
+OUTPUT_DIR = BASE_DIR / "../output"
 
 # Ensure output dir exists
 os.makedirs(OUTPUT_DIR, exist_ok=True)
