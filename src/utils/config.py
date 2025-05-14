@@ -27,6 +27,7 @@ COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
 
 # Metrics of interest with human display names
 METRICS = {
+    'delivered': 'Message Delivered',
     'delivery_prob': 'Delivery Probability',
     'overhead_ratio': 'Overhead Ratio',
     'latency_avg': 'Average Latency (s)',
