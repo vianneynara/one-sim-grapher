@@ -102,7 +102,7 @@ def parse_filename(filename):
             try:
                 params[f"{key}_numeric"] = Config.NUMERIC_EXTRACTION[key](value)
             except (ValueError, AttributeError, TypeError):
-                pass  # If conversion fails, just keep the original
+                pass  # If conversion fails, use original
 
     return params
 
@@ -199,8 +199,7 @@ def plot_comparison(df, metrics, x_axis, compare_by, output_dir, config):
         # Get all other consistent parameters for the title
         constant_params = {}
         for col in df.columns:
-            if col not in [x_axis, compare_by, metric, x_axis_numeric] and col not in [f"{p}_numeric" for p in
-                                                                                       df.columns]:
+            if col not in [x_axis, compare_by, metric, x_axis_numeric] and col not in [f"{p}_numeric" for p in df.columns]:
                 if len(df[col].unique()) == 1:
                     constant_params[col] = df[col].iloc[0]
 
@@ -237,13 +236,15 @@ def plot_comparison(df, metrics, x_axis, compare_by, output_dir, config):
         metric_label = config.METRICS.get(metric, metric)
         plt.ylabel(metric_label)
 
-        # Create a title with constant parameters
-        const_params_str = ", ".join([f"{config.PARAMETER_NAMES.get(k, k)}: {v}" for k, v in constant_params.items()])
-        if const_params_str:
-            const_params_str = f"\n({const_params_str})"
+        # # Create a title with constant parameters
+        # const_params_str = ", ".join([f"{config.PARAMETER_NAMES.get(k, k)}: {v}" for k, v in constant_params.items()])
+        # if const_params_str:
+        #     const_params_str = f"\n({const_params_str})"
+
+        # plt.title(f'{metric_label} vs {x_label} by {config.PARAMETER_NAMES.get(compare_by, compare_by)}{const_params_str}')
 
         plt.title(
-            f'{metric_label} vs {x_label} by {config.PARAMETER_NAMES.get(compare_by, compare_by)}{const_params_str}')
+            f'{metric_label} vs {x_label} by {config.PARAMETER_NAMES.get(compare_by, compare_by)} using {constant_params.get("routingAlgorithm")}')
 
         plt.grid(True, linestyle='--', alpha=0.7)
         plt.legend()
