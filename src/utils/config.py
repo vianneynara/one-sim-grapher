@@ -21,12 +21,18 @@ STATS_FILE_PATTERN = r"(.+)-([\w@\d]+)_MessageStatsReport\.txt"
 FIGURE_DPI = 300
 FIGURE_SIZE = (10, 6)
 LINE_STYLES = ['-', '--', '-.', ':']
-MARKERS = ['o', 's', '^', 'D', '*', 'x', '+']
+MARKERS = ['o', 's', '^', 'D', '*', 'x', '+', 'v', '<', '>']
 COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
           '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
 
 # Metrics of interest with human display names
 METRICS = {
+    'created': 'Messages Created',
+    'started': 'Messages Started',
+    'relayed': 'Messages Relayed',
+    'aborted': 'Messages Aborted',
+    'dropped': 'Messages Dropped',
+    'removed': 'Messages Removed',
     'delivered': 'Message Delivered',
     'delivery_prob': 'Delivery Probability',
     'overhead_ratio': 'Overhead Ratio',
@@ -37,9 +43,3 @@ METRICS = {
     'buffertime_avg': 'Average Buffer Time (s)',
     'buffertime_med': 'Median Buffer Time (s)',
 }
-
-# Time metrics to convert to seconds (if needed)
-TIME_METRICS = ['latency_avg', 'latency_med', 'buffertime_avg', 'buffertime_med']
-
-# Logging settings
-LOGGING_LEVEL = "INFO"
