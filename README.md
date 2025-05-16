@@ -14,16 +14,12 @@ them using matplotlib graph library.
 
 ```
 one-sim-report-grapher/
+├── i_ungrouped/            # Place your ungrouped report result files here
 ├── input/                  # Place your report result files here
-├── output/                 # Graphs output will be saved here
-├── src/
-│   ├── __init__.py
-│   └── utils/
-│       ├── __init__.py
-│       ├── config.py       # Configuration settings
-│       ├── helpers.py      # Helper functions
-│       └── MessageStatsSummary.py  # MessageStatsReport parser
-├── Grapher.py  # Main script
+├── o_grouped/              # Graphs output will be saved here
+├── output                  # Grouper output will be saved here
+├── Grapher.py              # Grapher script
+├── Grouper.py              # Grouper script
 └── README.md
 ```
 
@@ -50,6 +46,11 @@ Where:
 - ProphetPlusRANDOM is the router name
 - MsgTtl is the parameter name 
 - 600 is the parameter value
+
+Advanced case:
+```
+python .\Grapher.py -i .\output\forwardingStrategy@COIN -o .\output\COIN -x bufferSize -c dropPolicy
+ ```
 
 ## Project Requirement
 
