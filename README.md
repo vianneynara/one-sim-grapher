@@ -70,7 +70,7 @@ python Grouper.py
 python Grouper.py --group-by bufferSize
 
 # Specify custom input and output directories:
-python Grouper.py -i ./my_reports -o ./grouped_reports -g dropPolicy
+python Grouper.py -i ./i_ungrouped -o ./o_grouped -g dropPolicy
 ```
 
 # DISCLAIMER
