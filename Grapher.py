@@ -254,9 +254,13 @@ def plot_comparison(df, metrics, x_axis, compare_by, output_dir, config):
         safe_x_axis = x_axis.replace("/", "_")
         safe_metric = metric.replace("/", "_")
 
+        # I'll customize the file naming for simplicity sake
+        # FILENAMING = f"compare_{safe_compare_by}_by_{safe_x_axis}_{safe_metric}.png"
+        FILENAMING = f"{Path(output_dir).name}_{safe_metric}.png"
+
         output_file = os.path.join(
             output_dir,
-            f"compare_{safe_compare_by}_by_{safe_x_axis}_{safe_metric}.png"
+            FILENAMING
         )
         plt.savefig(output_file, dpi=config.FIGURE_DPI, bbox_inches='tight')
         plt.close()
