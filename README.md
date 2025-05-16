@@ -52,6 +52,11 @@ Advanced case:
 python .\Grapher.py -i .\output\forwardingStrategy@COIN -o .\output\COIN -x bufferSize -c dropPolicy
  ```
 
+Advanced example:
+```
+ProphetMulti-bufferSize@1M-dropPolicy@1-forwardingStrategy@COIN_MessageStatsReport.txt
+```
+
 ## Project Requirement
 
 Available in [requirements.txt](requirements.txt)
