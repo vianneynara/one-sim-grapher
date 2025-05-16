@@ -27,12 +27,12 @@ COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
 
 # Metrics of interest with human display names
 METRICS = {
-    'created': 'Messages Created',
-    'started': 'Messages Started',
-    'relayed': 'Messages Relayed',
-    'aborted': 'Messages Aborted',
-    'dropped': 'Messages Dropped',
-    'removed': 'Messages Removed',
+    'created': 'Message Created',
+    'started': 'Message Started',
+    'relayed': 'Message Relayed',
+    'aborted': 'Message Aborted',
+    'dropped': 'Message Dropped',
+    'removed': 'Message Removed',
     'delivered': 'Message Delivered',
     'delivery_prob': 'Delivery Probability',
     'overhead_ratio': 'Overhead Ratio',
