@@ -54,3 +54,28 @@ Where:
 ## Project Requirement
 
 Available in [requirements.txt](requirements.txt)
+
+# ONE Simulator Grouper
+
+The grouper helps group report files by a defined grouping key. 
+By default, it will use the last parameter of the files as the grouping key.
+
+## Usage
+
+```bash
+# Basic usage with default settings:
+python Grouper.py
+
+# Group by a specific parameter:
+python Grouper.py --group-by bufferSize
+
+# Specify custom input and output directories:
+python Grouper.py -i ./my_reports -o ./grouped_reports -g dropPolicy
+```
+
+# DISCLAIMER
+
+THIS REPOSITORY IS MOSTLY VIBE CODED by using either Claude, GitHub Copilot, Grok, Deepseek, or ChatGPT. 
+Shout out to all the AI models that helped me with this project.
+
+(I didn't have much time)
