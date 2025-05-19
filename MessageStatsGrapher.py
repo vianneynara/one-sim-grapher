@@ -1,3 +1,8 @@
+"""
+This module encapsulates the plotting process for ONE Simulator: MessageStatsReporter.java reports.
+It won't work with other report types.
+"""
+
 import os
 import sys
 import re
@@ -29,7 +34,7 @@ class Config:
     COLORS = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
               '#8c564b', '#e377c2', '#7f7f7f', '#bcbd22', '#17becf']
 
-    # Metrics of interest with human display names
+    # Metrics of interest of the report with human display names
     METRICS = {
         'created': 'Message Created',
         'started': 'Message Started',
@@ -170,13 +175,12 @@ def plot_comparison(df, metrics, x_axis, compare_by, output_dir, config):
     Create line graphs comparing the specified parameter across different values
     for each metric.
 
-    Args:
-        df: DataFrame with the data
-        metrics: List of metrics to plot
-        x_axis: Parameter to use as x-axis
-        compare_by: Parameter to compare (line series)
-        output_dir: Directory to save the output
-        config: Configuration object
+    :param df: DataFrame with the data
+    :param metrics: List of metrics to plot
+    :param x_axis: Parameter to use as x-axis
+    :param compare_by: Parameter to compare (line series)
+    :param output_dir: Directory to save the output
+    :param config: Configuration object
     """
     # Ensure the x_axis has a numeric version
     if f"{x_axis}_numeric" in df.columns:
@@ -215,7 +219,7 @@ def plot_comparison(df, metrics, x_axis, compare_by, output_dir, config):
             # Sort by x-axis value
             filtered_df = filtered_df.sort_values(x_axis_numeric)
 
-            # Plot line
+            # Plot line, works by cycling through styles/colors/markers
             style_idx = i % len(config.LINE_STYLES)
             color_idx = i % len(config.COLORS)
             marker_idx = i % len(config.MARKERS)
@@ -249,7 +253,7 @@ def plot_comparison(df, metrics, x_axis, compare_by, output_dir, config):
         plt.grid(True, linestyle='--', alpha=0.7)
         plt.legend()
 
-        # Save the figure
+        # Replacing slashes in the filename to avoid issues
         safe_compare_by = compare_by.replace("/", "_")
         safe_x_axis = x_axis.replace("/", "_")
         safe_metric = metric.replace("/", "_")
@@ -270,7 +274,7 @@ def plot_comparison(df, metrics, x_axis, compare_by, output_dir, config):
 
 def save_data_summary(df, output_dir):
     """
-    Save a summary of the data for reference.
+    Save a summary of the data for reference. Saved as CSV and JSON.
 
     Args:
         df: DataFrame with the data
@@ -303,7 +307,7 @@ def save_data_summary(df, output_dir):
             "count": len(values)
         }
 
-    # Get metric information
+    # Get metric information (summary statistics) that will be represented in JSON.
     for metric in Config.METRICS.keys():
         if metric in df.columns:
             info["metrics"][metric] = {
