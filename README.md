@@ -18,15 +18,17 @@ one-sim-report-grapher/
 ├── input/                  # Place your report result files here
 ├── o_grouped/              # Graphs output will be saved here
 ├── output                  # Grouper output will be saved here
-├── Grapher.py              # Grapher script
+├── MessageStatsGrapher.py  # Grapher script
 ├── Grouper.py              # Grouper script
 └── README.md
 ```
 
 ## Usage
 
+### MessageStatsReporter Grapher
+
 1. Place your report results files inside `input` directory in this project's root.
-2. Run this script: `python "Grapher.py"`
+2. Run this script: `python "MessageStats.py"`
 
 ## Naming Conventions
 
