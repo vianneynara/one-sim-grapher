@@ -23,16 +23,16 @@ one-sim-report-grapher/
 └── README.md
 ```
 
-## Usage
-
-### MessageStatsReporter Grapher
-
-1. Place your report results files inside `input` directory in this project's root.
-2. Run this script: `python "MessageStats.py"`
-
-## Naming Conventions
+## Grapher(s) Usage
 
 ### MessageStatsReporter
+
+#### Running  Grapher
+
+1. Place your report results files inside `input` directory in this project's root.
+2. Run this script: `python "MessageStatsGrapher.py"`
+
+#### Naming Conventions
 
 Format: 
 ```
