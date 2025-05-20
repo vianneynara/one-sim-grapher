@@ -280,10 +280,11 @@ def save_data_summary(df, output_dir):
         df: DataFrame with the data
         output_dir: Directory to save the output
     """
-    # Save a CSV with all data
-    csv_file = os.path.join(output_dir, "all_data.csv")
-    df.to_csv(csv_file, index=False)
-    print(f"Saved complete dataset to {csv_file}")
+    dir_name = os.path.basename(os.path.normpath(output_dir))
+    csv_file = f"{dir_name}_all_data.csv" if dir_name else "all_data.csv"
+    csv_path = os.path.join(output_dir, csv_file)
+    df.to_csv(csv_path, index=False)
+    print(f"Saved complete dataset to {csv_path}")
 
     # Save a JSON with parameter and metric information
     info = {
@@ -318,11 +319,12 @@ def save_data_summary(df, output_dir):
             }
 
     # Save the summary
-    info_file = os.path.join(output_dir, "data_summary.json")
-    with open(info_file, 'w') as f:
+    json_file = f"{dir_name}_data_summary.json" if dir_name else "data_summary.json"
+    json_path = os.path.join(output_dir, json_file)
+    with open(json_path, 'w') as f:
         json.dump(info, f, indent=2)
 
-    print(f"Saved data summary to {info_file}")
+    print(f"Saved data summary to {json_path}")
 
 
 def main():
