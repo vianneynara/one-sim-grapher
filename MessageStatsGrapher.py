@@ -281,7 +281,7 @@ def save_data_summary(df, output_dir):
         output_dir: Directory to save the output
     """
     # Save a CSV with all data
-    csv_file = os.path.join(Path(output_dir).name, "all_data.csv")
+    csv_file = os.path.join(output_dir, "all_data.csv")
     df.to_csv(csv_file, index=False)
     print(f"Saved complete dataset to {csv_file}")
 
@@ -318,7 +318,7 @@ def save_data_summary(df, output_dir):
             }
 
     # Save the summary
-    info_file = os.path.join(Path(output_dir).name, "data_summary.json")
+    info_file = os.path.join(output_dir, "data_summary.json")
     with open(info_file, 'w') as f:
         json.dump(info, f, indent=2)
 
