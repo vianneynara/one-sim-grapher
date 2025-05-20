@@ -1,0 +1,167 @@
+{
+  "parameters": {
+    "routingAlgorithm": {
+      "unique_values": [
+        "ProphetMulti"
+      ],
+      "count": 1
+    },
+    "bufferSize": {
+      "unique_values": [
+        "100M",
+        "10M",
+        "110M",
+        "120M",
+        "130M",
+        "140M",
+        "150M",
+        "160M",
+        "170M",
+        "180M",
+        "190M",
+        "200M",
+        "20M",
+        "30M",
+        "40M",
+        "50M",
+        "60M",
+        "70M",
+        "80M",
+        "90M"
+      ],
+      "count": 20
+    },
+    "dropPolicy": {
+      "unique_values": [
+        "FIFO",
+        "LEPR",
+        "MOFO",
+        "MOPR",
+        "SHLI"
+      ],
+      "count": 5
+    },
+    "forwardingStrategy": {
+      "unique_values": [
+        "COIN"
+      ],
+      "count": 1
+    },
+    "sim_time": {
+      "unique_values": [
+        100000.0
+      ],
+      "count": 1
+    },
+    "response_prob": {
+      "unique_values": [
+        0.0
+      ],
+      "count": 1
+    },
+    "rtt_avg": {
+      "unique_values": [
+        NaN
+      ],
+      "count": 1
+    },
+    "rtt_med": {
+      "unique_values": [
+        NaN
+      ],
+      "count": 1
+    }
+  },
+  "metrics": {
+    "created": {
+      "min": 3356.0,
+      "max": 3356.0,
+      "mean": 3356.0,
+      "has_nan": false
+    },
+    "started": {
+      "min": 118432.0,
+      "max": 127917.0,
+      "mean": 119113.15,
+      "has_nan": false
+    },
+    "relayed": {
+      "min": 118372.0,
+      "max": 127858.0,
+      "mean": 119056.18,
+      "has_nan": false
+    },
+    "aborted": {
+      "min": 49.0,
+      "max": 61.0,
+      "mean": 55.97,
+      "has_nan": false
+    },
+    "dropped": {
+      "min": 0.0,
+      "max": 47725.0,
+      "mean": 2311.28,
+      "has_nan": false
+    },
+    "removed": {
+      "min": 0.0,
+      "max": 0.0,
+      "mean": 0.0,
+      "has_nan": false
+    },
+    "delivered": {
+      "min": 2807.0,
+      "max": 3114.0,
+      "mean": 3087.08,
+      "has_nan": false
+    },
+    "delivery_prob": {
+      "min": 0.8364,
+      "max": 0.9279,
+      "mean": 0.9198479999999999,
+      "has_nan": false
+    },
+    "overhead_ratio": {
+      "min": 37.089,
+      "max": 44.3377,
+      "mean": 37.58581,
+      "has_nan": false
+    },
+    "latency_avg": {
+      "min": 6789.8015,
+      "max": 7456.9941,
+      "mean": 6929.017527,
+      "has_nan": false
+    },
+    "latency_med": {
+      "min": 6133.0,
+      "max": 6420.0,
+      "mean": 6245.44,
+      "has_nan": false
+    },
+    "hopcount_avg": {
+      "min": 2.6352,
+      "max": 2.8285,
+      "mean": 2.787604,
+      "has_nan": false
+    },
+    "hopcount_med": {
+      "min": 2.0,
+      "max": 3.0,
+      "mean": 2.95,
+      "has_nan": false
+    },
+    "buffertime_avg": {
+      "min": 19577.3868,
+      "max": 56540.3976,
+      "mean": 32860.412399999994,
+      "has_nan": true
+    },
+    "buffertime_med": {
+      "min": 3384.0,
+      "max": 62439.0,
+      "mean": 31084.2,
+      "has_nan": true
+    }
+  }
+}
